@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Read the input image 
-im = cv2.imread("photo_3.jpg")
+im = cv2.imread("photo_1.jpg")
 
 # Convert to grayscale and apply Gaussian filtering
 im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
@@ -32,10 +32,10 @@ for rect in rects:
     # Draw the rectangles
     cv2.rectangle(im, (rect[0]-10, rect[1]-10), (rect[0] + rect[2]+10, rect[1] + rect[3]+10), (0, 255, 0), 3) 
     # Make the rectangular region around the digit
-    leng = int(rect[3] * 1.6)
+    leng = int(rect[3] * 1.2)
     pt1 = int(rect[1] + rect[3] // 2 - leng // 2)
     pt2 = int(rect[0] + rect[2] // 2 - leng // 2)
-    roi = im_th[pt1:pt1+leng - 1, pt2:pt2+leng + 4]
+    roi = im_th[pt1:pt1+leng , pt2:pt2+leng ]
     # Resize the image
     if roi.any():
         roi = cv2.resize(roi, (28, 28), interpolation=cv2.INTER_AREA)
@@ -52,4 +52,4 @@ cv2.waitKey()
 
 #Saving the output
 cv2.destroyAllWindows()
-cv2.imwrite("output_3.jpeg",im)
+cv2.imwrite("output_2.jpeg",im)
