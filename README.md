@@ -8,7 +8,7 @@ Classifier : Convolutional Neural Network with MNIST Handwritten Digits Dataset
 
 Optimizer : Adam
 
-# Project 6 OCR Character Recognition
+# Project 6 OCR (Optical Character Recognition)
 
 Input Images : 50,000+ Images of Computerized font and Hand Written Character and Digits. Both Capital and Small Alphabets, 62 Classes.
 
