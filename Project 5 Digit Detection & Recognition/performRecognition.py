@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Read the input image 
-im = cv2.imread("photo_1.jpg")
+im = cv2.imread("photo_3.jpg")
 
 # Convert to grayscale and apply Gaussian filtering
 im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
@@ -41,6 +41,7 @@ for rect in rects:
         roi = cv2.resize(roi, (28, 28), interpolation=cv2.INTER_AREA)
         roi = cv2.dilate(roi, (3, 3))
         X = img_to_array(roi)
+        X = X/255
         X = X.reshape(-1,28,28,1)
         nbr = loaded_model.predict(X)
         _,nbr = np.where(nbr == np.amax(nbr))
@@ -52,4 +53,4 @@ cv2.waitKey()
 
 #Saving the output
 cv2.destroyAllWindows()
-cv2.imwrite("output_2.jpeg",im)
+cv2.imwrite("output_3.jpeg",im)
