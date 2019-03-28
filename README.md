@@ -23,3 +23,19 @@ Link to Dataset : http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
 The Data needed is EnglishHnd.tgz for Hand Written, EnglishFnt.tgz for Computerized Fonts.
 
 The Data is then merged according to the need.
+
+# Project 7 Car Number Plate Detection and Alphanumberic Recognition
+
+Input Images : Images of random Cars Front or Back with Number Plate in it.
+
+Output : Images of corresponding Number Plates with the Recognized Alphanumerics in English.
+
+Processing : 
+
+1. Create edged image of car so that edges can be identified.
+
+2. Find where there is 4 edges with a parameter for good results.
+
+3. Applying various Visual Effects and Finding contours etc for detecting the Alphanumeric.
+
+4. Recognizing the Alphanumerics and labeling them on the image.
